@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane fx:id="tabpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Query">
+  <tabs>
+    <Tab text="舰娘查询">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0">
+               <children>
+                  <ImageView fitHeight="774.0" fitWidth="1379.0" layoutX="-26.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/login.png" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="warshipInfoTable" layoutX="50.0" layoutY="185.0" prefHeight="532.0" prefWidth="1180.0">
+                    <columns>
+                      <TableColumn fx:id="name" prefWidth="122.0" resizable="false" text="舰船名" />
+                      <TableColumn fx:id="alias" minWidth="0.0" prefWidth="45.0" resizable="false" text="别名" />
+                        <TableColumn fx:id="id" prefWidth="59.0" resizable="false" text="编号" />
+                        <TableColumn fx:id="type" prefWidth="75.0" resizable="false" text="类型" />
+                        <TableColumn fx:id="rarity" prefWidth="68.0" resizable="false" text="稀有度" />
+                        <TableColumn fx:id="camp" prefWidth="79.0" resizable="false" text="阵营" />
+                        <TableColumn fx:id="durability" prefWidth="59.0" resizable="false" text="耐久" />
+                        <TableColumn fx:id="armor" prefWidth="53.0" resizable="false" text="装甲" />
+                        <TableColumn fx:id="reload" prefWidth="62.0" resizable="false" text="装填" />
+                        <TableColumn fx:id="artillery" prefWidth="60.0" resizable="false" text="炮击" />
+                        <TableColumn fx:id="torpedo" prefWidth="60.0" resizable="false" text="雷击" />
+                        <TableColumn fx:id="motility" prefWidth="61.0" resizable="false" text="机动" />
+                        <TableColumn fx:id="antiaircraft" prefWidth="67.0" resizable="false" text="防空" />
+                        <TableColumn fx:id="aviation" prefWidth="68.0" resizable="false" text="航空" />
+                        <TableColumn fx:id="consume" prefWidth="64.0" resizable="false" text="消耗" />
+                        <TableColumn fx:id="antisubmarine" prefWidth="55.0" resizable="false" text="反潜" />
+                        <TableColumn fx:id="luck" prefWidth="56.0" resizable="false" text="幸运" />
+                        <TableColumn fx:id="speed" prefWidth="66.0" resizable="false" text="航速" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="warshipQueryCont" layoutX="50.0" layoutY="39.0" prefHeight="30.0" prefWidth="507.0" promptText="请输入想要查询的内容" />
+                  <Button fx:id="warshipSearchBtn" layoutX="613.0" layoutY="39.0" mnemonicParsing="false" onAction="#searchWarship" prefHeight="30.0" prefWidth="67.0" text="查询" />
+                  <Label layoutX="50.0" layoutY="88.0" text="筛选" />
+                  <Label layoutX="97.0" layoutY="116.0" text="阵营" />
+                  <Label layoutX="97.0" layoutY="144.0" text="稀有度" />
+                  <Label layoutX="97.0" layoutY="88.0" text="类型" />
+                  <Button fx:id="exitButton" layoutX="724.0" layoutY="39.0" mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="67.0" text="退出" />
+                  <CheckBox fx:id="allType" layoutX="157.0" layoutY="88.0" mnemonicParsing="false" text="全部" />
+                  <CheckBox fx:id="allCamp" layoutX="157.0" layoutY="116.0" mnemonicParsing="false" text="全阵营" />
+                  <CheckBox fx:id="allRarity" layoutX="157.0" layoutY="144.0" mnemonicParsing="false" text="全部" />
+                  <CheckBox fx:id="front" layoutX="246.0" layoutY="88.0" mnemonicParsing="false" text="前排先锋" />
+                  <CheckBox fx:id="usa" layoutX="246.0" layoutY="116.0" mnemonicParsing="false" text="白鹰" />
+                  <CheckBox fx:id="normal" layoutX="246.0" layoutY="144.0" mnemonicParsing="false" text="普通" />
+                  <CheckBox fx:id="back" layoutX="351.0" layoutY="87.0" mnemonicParsing="false" text="后排主力" />
+                  <CheckBox fx:id="uk" layoutX="351.0" layoutY="115.0" mnemonicParsing="false" text="皇家" />
+                  <CheckBox fx:id="rare" layoutX="351.0" layoutY="143.0" mnemonicParsing="false" text="稀有" />
+                  <CheckBox fx:id="dd" layoutX="455.0" layoutY="88.0" mnemonicParsing="false" text="驱逐" />
+                  <CheckBox fx:id="jp" layoutX="455.0" layoutY="116.0" mnemonicParsing="false" text="重樱" />
+                  <CheckBox fx:id="sr" layoutX="455.0" layoutY="144.0" mnemonicParsing="false" text="精锐" />
+                  <CheckBox fx:id="cl" layoutX="531.0" layoutY="88.0" mnemonicParsing="false" text="轻巡" />
+                  <CheckBox fx:id="de" layoutX="531.0" layoutY="116.0" mnemonicParsing="false" text="铁血" />
+                  <CheckBox fx:id="ssr" layoutX="531.0" layoutY="144.0" mnemonicParsing="false" text="超稀有" />
+                  <CheckBox fx:id="hl" layoutX="621.0" layoutY="88.0" mnemonicParsing="false" text="重巡" />
+                  <CheckBox fx:id="cn" layoutX="621.0" layoutY="116.0" mnemonicParsing="false" text="东煌" />
+                  <CheckBox fx:id="ur" layoutX="621.0" layoutY="144.0" mnemonicParsing="false" text="海上传奇" />
+                  <CheckBox fx:id="bb" layoutX="726.0" layoutY="88.0" mnemonicParsing="false" text="战列" />
+                  <CheckBox fx:id="it" layoutX="726.0" layoutY="116.0" mnemonicParsing="false" text="撒丁帝国" />
+                  <CheckBox fx:id="cva" layoutX="832.0" layoutY="88.0" mnemonicParsing="false" text="航母" />
+                  <CheckBox fx:id="ru" layoutX="832.0" layoutY="116.0" mnemonicParsing="false" text="北方联合" />
+                  <CheckBox fx:id="otherType" layoutX="938.0" layoutY="88.0" mnemonicParsing="false" text="其他" />
+                  <CheckBox fx:id="fr" layoutX="938.0" layoutY="116.0" mnemonicParsing="false" text="自由鸢尾" />
+                  <CheckBox fx:id="wxfr" layoutX="1044.0" layoutY="116.0" mnemonicParsing="false" text="维希教廷" />
+                  <CheckBox fx:id="otherCamp" layoutX="1151.0" layoutY="115.0" mnemonicParsing="false" text="其他" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="装备查询">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0">
+               <children>
+                  <ImageView fitHeight="770.0" fitWidth="1388.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/query2.png" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="weaponTable" layoutX="50.0" layoutY="185.0" prefHeight="532.0" prefWidth="1180.0">
+                     <columns>
+                        <TableColumn fx:id="name1" prefWidth="136.0" resizable="false" text="装备名称" />
+                        <TableColumn fx:id="type1" minWidth="0.0" prefWidth="64.0" resizable="false" text="类型" />
+                        <TableColumn fx:id="camp1" prefWidth="54.0" resizable="false" text="阵营" />
+                        <TableColumn fx:id="damage" prefWidth="56.0" resizable="false" text="伤害" />
+                        <TableColumn fx:id="firingrate" prefWidth="86.0" resizable="false" text="标准射速" />
+                        <TableColumn fx:id="ammo" prefWidth="73.0" resizable="false" text="弹药" />
+                        <TableColumn fx:id="artillery1" prefWidth="59.0" resizable="false" text="炮击" />
+                        <TableColumn fx:id="torpedo1" prefWidth="67.0" resizable="false" text="雷击" />
+                        <TableColumn fx:id="antiaircraft1" prefWidth="79.0" resizable="false" text="防空" />
+                        <TableColumn fx:id="aviation1" prefWidth="67.0" resizable="false" text="航空" />
+                        <TableColumn fx:id="durability1" prefWidth="77.0" resizable="false" text="耐久" />
+                        <TableColumn fx:id="motility1" prefWidth="95.0" resizable="false" text="机动" />
+                        <TableColumn fx:id="accuracy" prefWidth="87.0" resizable="false" text="命中" />
+                        <TableColumn fx:id="reload1" prefWidth="106.0" resizable="false" text="装填" />
+                        <TableColumn fx:id="speed1" prefWidth="73.0" resizable="false" text="航速" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="weaponQueryCont" layoutX="50.0" layoutY="39.0" prefHeight="30.0" prefWidth="507.0" promptText="请输入想要查询的内容" />
+                  <Button fx:id="weaponSearchBtn" layoutX="613.0" layoutY="39.0" mnemonicParsing="false" onAction="#searchWeapon" prefHeight="30.0" prefWidth="67.0" text="查询" />
+                  <Label layoutX="50.0" layoutY="88.0" text="筛选" />
+                  <Label layoutX="97.0" layoutY="116.0" text="阵营" />
+                  <Label layoutX="97.0" layoutY="88.0" text="类型" />
+                  <Button fx:id="exitButton1" layoutX="724.0" layoutY="39.0" mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="67.0" text="退出" />
+                  <CheckBox fx:id="allType1" layoutX="157.0" layoutY="88.0" mnemonicParsing="false" text="全部" />
+                  <CheckBox fx:id="allCamp1" layoutX="157.0" layoutY="116.0" mnemonicParsing="false" text="全阵营" />
+                  <CheckBox fx:id="ckartillery" layoutX="246.0" layoutY="88.0" mnemonicParsing="false" text="舰炮" />
+                  <CheckBox fx:id="usa1" layoutX="246.0" layoutY="116.0" mnemonicParsing="false" text="白鹰" />
+                  <CheckBox fx:id="cktorpedo" layoutX="323.0" layoutY="87.0" mnemonicParsing="false" text="鱼雷" />
+                  <CheckBox fx:id="uk1" layoutX="323.0" layoutY="115.0" mnemonicParsing="false" text="皇家" />
+                  <CheckBox fx:id="ckantiaircraft" layoutX="399.0" layoutY="88.0" mnemonicParsing="false" text="防空炮" />
+                  <CheckBox fx:id="jp1" layoutX="399.0" layoutY="116.0" mnemonicParsing="false" text="重樱" />
+                  <CheckBox fx:id="fighter" layoutX="489.0" layoutY="88.0" mnemonicParsing="false" text="战斗机" />
+                  <CheckBox fx:id="de1" layoutX="489.0" layoutY="116.0" mnemonicParsing="false" text="铁血" />
+                  <CheckBox fx:id="bomber" layoutX="579.0" layoutY="88.0" mnemonicParsing="false" text="轰炸机" />
+                  <CheckBox fx:id="cn1" layoutX="579.0" layoutY="116.0" mnemonicParsing="false" text="东煌" />
+                  <CheckBox fx:id="torpedoplane" layoutX="671.0" layoutY="88.0" mnemonicParsing="false" text="鱼雷机" />
+                  <CheckBox fx:id="it1" layoutX="671.0" layoutY="116.0" mnemonicParsing="false" text="撒丁帝国" />
+                  <CheckBox fx:id="equipment" layoutX="777.0" layoutY="88.0" mnemonicParsing="false" text="设备" />
+                  <CheckBox fx:id="ru1" layoutX="777.0" layoutY="116.0" mnemonicParsing="false" text="北方联合" />
+                  <CheckBox fx:id="otherType1" layoutX="883.0" layoutY="88.0" mnemonicParsing="false" text="其他" />
+                  <CheckBox fx:id="fr1" layoutX="883.0" layoutY="116.0" mnemonicParsing="false" text="自由鸢尾" />
+                  <CheckBox fx:id="wxfr1" layoutX="989.0" layoutY="116.0" mnemonicParsing="false" text="维希教廷" />
+                  <CheckBox fx:id="otherCamp1" layoutX="1096.0" layoutY="115.0" mnemonicParsing="false" text="其他" />
+               </children>
+            </AnchorPane>
+         </content>
+    </Tab>
+      <Tab text="配装查询">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0">
+               <children>
+                  <ImageView fitHeight="774.0" fitWidth="1379.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/query3.png" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="wwTable" layoutX="50.0" layoutY="185.0" prefHeight="532.0" prefWidth="1180.0">
+                     <columns>
+                        <TableColumn fx:id="name2" prefWidth="122.0" resizable="false" text="舰船名" />
+                        <TableColumn fx:id="id2" prefWidth="59.0" resizable="false" text="编号" />
+                        <TableColumn fx:id="weapon1" prefWidth="130.0" resizable="false" text="武器位1" />
+                        <TableColumn fx:id="weapontype1" prefWidth="119.0" resizable="false" text="武器位1类型" />
+                        <TableColumn fx:id="weapon2" prefWidth="133.0" resizable="false" text="武器位2" />
+                        <TableColumn fx:id="weapontype2" prefWidth="111.0" resizable="false" text="武器位2类型" />
+                        <TableColumn fx:id="weapon3" prefWidth="135.0" resizable="false" text="武器位3" />
+                        <TableColumn fx:id="weapontype3" prefWidth="123.0" resizable="false" text="武器位3类型" />
+                        <TableColumn fx:id="equipment1" prefWidth="118.0" resizable="false" text="设备1" />
+                        <TableColumn fx:id="equipment2" prefWidth="129.0" resizable="false" text="设备2" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="wwQueryCont" layoutX="50.0" layoutY="39.0" prefHeight="30.0" prefWidth="507.0" promptText="请输入想要查询的内容" />
+                  <Button fx:id="wwSearchBtn" layoutX="613.0" layoutY="39.0" mnemonicParsing="false" onAction="#searchWarshipWeapon" prefHeight="30.0" prefWidth="67.0" text="查询" />
+                  <Button fx:id="exitButton2" layoutX="724.0" layoutY="39.0" mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="67.0" text="退出" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
